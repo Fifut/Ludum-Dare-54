@@ -16,4 +16,5 @@ mono_crash.*.json
 
 #Addons
 addons/
+Movie/
 project_time_traker.json

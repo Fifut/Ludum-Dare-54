@@ -1,10 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://di2aruf821lfb"]
+[gd_scene load_steps=5 format=3 uid="uid://di2aruf821lfb"]
 
 [ext_resource type="PackedScene" uid="uid://bcaev7h3sosy5" path="res://Earth/earth.tscn" id="1_b0o21"]
+[ext_resource type="PackedScene" uid="uid://sgjddoeyaxwc" path="res://Background/background.tscn" id="1_de401"]
 [ext_resource type="PackedScene" uid="uid://cfmpwidsrbs78" path="res://Satellite/satellite.tscn" id="2_7j2bm"]
 [ext_resource type="PackedScene" uid="uid://dnnuo03dxtwqj" path="res://Rocket/rocket.tscn" id="3_42b04"]
 
 [node name="LimitedSpace" type="Node2D"]
+
+[node name="Background" parent="." instance=ExtResource("1_de401")]
 
 [node name="Satellite" parent="." instance=ExtResource("2_7j2bm")]
 position = Vector2(800, 450)

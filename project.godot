@@ -20,6 +20,10 @@ config/icon="res://icon.svg"
 window/size/viewport_width=1600
 window/size/viewport_height=900
 
+[editor]
+
+movie_writer/movie_file="D:/GIT/Ludum Dare 54/Movie/Movie.avi"
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/project-time-tracker/plugin.cfg")
