@@ -8,6 +8,7 @@ size = Vector2(6, 40)
 
 [node name="Rocket" type="RigidBody2D"]
 collision_layer = 2
+can_sleep = false
 script = ExtResource("1_tepyd")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -17,3 +18,11 @@ texture = ExtResource("2_22k41")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 4)
 shape = SubResource("RectangleShape2D_r3xyi")
+
+[node name="EngineMarker" type="Marker2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(0, 24)
+
+[node name="RCSMarker" type="Marker2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(0, -16)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://di2aruf821lfb"]
+[gd_scene load_steps=8 format=3 uid="uid://di2aruf821lfb"]
 
 [ext_resource type="PackedScene" uid="uid://bcaev7h3sosy5" path="res://Earth/earth.tscn" id="1_b0o21"]
 [ext_resource type="PackedScene" uid="uid://sgjddoeyaxwc" path="res://Background/background.tscn" id="1_de401"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cfmpwidsrbs78" path="res://Satellite/satellite.tscn" id="2_7j2bm"]
 [ext_resource type="PackedScene" uid="uid://0mp0xoprhcl7" path="res://Menu/menu.tscn" id="2_o7b4m"]
 [ext_resource type="PackedScene" uid="uid://dnnuo03dxtwqj" path="res://Rocket/rocket.tscn" id="3_42b04"]
+[ext_resource type="PackedScene" uid="uid://bdbixliu441p1" path="res://Orbit/orbit.tscn" id="7_dvo0o"]
 
 [node name="LimitedSpace" type="Node2D"]
 script = ExtResource("1_t1xvc")
@@ -14,12 +15,12 @@ script = ExtResource("1_t1xvc")
 
 [node name="MenuCanvasLayer" type="CanvasLayer" parent="."]
 unique_name_in_owner = true
+visible = false
 
 [node name="MenuContainer" parent="MenuCanvasLayer" instance=ExtResource("2_o7b4m")]
 
 [node name="Game" type="Node2D" parent="."]
 unique_name_in_owner = true
-visible = false
 
 [node name="Satellite" parent="Game" instance=ExtResource("2_7j2bm")]
 position = Vector2(800, 450)
@@ -27,8 +28,12 @@ speed = -20
 
 [node name="Earth" parent="Game" instance=ExtResource("1_b0o21")]
 position = Vector2(800, 450)
+speed = 50
 
 [node name="Rocket" parent="Game" instance=ExtResource("3_42b04")]
-position = Vector2(801, 274)
+position = Vector2(799, 274)
+
+[node name="Orbit" parent="Game" instance=ExtResource("7_dvo0o")]
+position = Vector2(800, 450)
 
 [connection signal="on_start" from="MenuCanvasLayer/MenuContainer" to="." method="_on_menu_container_on_start"]
