@@ -8,7 +8,6 @@ radius = 7.0
 height = 96.0
 
 [node name="Satellite" type="StaticBody2D"]
-visible = false
 script = ExtResource("1_imqjb")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

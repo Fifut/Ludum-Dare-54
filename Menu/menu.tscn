@@ -14,6 +14,21 @@ unicode = 32
 [sub_resource type="Shortcut" id="Shortcut_nj8ld"]
 events = [SubResource("InputEventKey_4xkku")]
 
+[sub_resource type="Animation" id="Animation_2culf"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SettingsContainer:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
 [sub_resource type="Animation" id="Animation_cpc3f"]
 resource_name = "Rotation"
 tracks/0/type = "value"
@@ -65,21 +80,6 @@ tracks/3/keys = {
 "values": [1.309, 0.0]
 }
 
-[sub_resource type="Animation" id="Animation_2culf"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("SettingsContainer:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_gdl42"]
 _data = {
 "RESET": SubResource("Animation_2culf"),
@@ -104,11 +104,12 @@ texture = ExtResource("1_oykve")
 [node name="SatelliteNode" type="Node2D" parent="."]
 unique_name_in_owner = true
 position = Vector2(-300, 600)
-rotation = -0.436332
+rotation = -0.349066
 
 [node name="SatelliteSprite" type="Sprite2D" parent="SatelliteNode"]
-position = Vector2(1600, 0)
-rotation = 0.523599
+unique_name_in_owner = true
+position = Vector2(1500, 0)
+rotation = 0.663225
 texture = ExtResource("3_c7big")
 
 [node name="HomeContainer" type="VBoxContainer" parent="."]
@@ -165,6 +166,7 @@ flat = true
 
 [node name="HowToContainer" type="VBoxContainer" parent="."]
 unique_name_in_owner = true
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -187,7 +189,8 @@ horizontal_alignment = 1
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_n63nk")
 theme_override_font_sizes/font_size = 28
-text = "Press space to lauch the rocket"
+text = "W S (or Up down) throttle
+A D (our Left Right) for Left and Right"
 horizontal_alignment = 1
 
 [node name="BackButton" type="Button" parent="HowToContainer"]
@@ -218,6 +221,27 @@ theme_override_font_sizes/font_size = 40
 text = "Settings"
 horizontal_alignment = 1
 
+[node name="HBoxContainer" type="HBoxContainer" parent="SettingsContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 20
+
+[node name="Label" type="Label" parent="SettingsContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_n63nk")
+theme_override_font_sizes/font_size = 28
+text = "Sounds volume"
+
+[node name="SoundSlider" type="HSlider" parent="SettingsContainer/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 10)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+min_value = -20.0
+max_value = 10.0
+
 [node name="BackButton" type="Button" parent="SettingsContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
@@ -237,4 +261,5 @@ libraries = {
 [connection signal="pressed" from="HomeContainer/SettingsButton" to="." method="_on_settings_button_pressed"]
 [connection signal="pressed" from="HomeContainer/ExitButton" to="." method="_on_exit_button_pressed"]
 [connection signal="pressed" from="HowToContainer/BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="value_changed" from="SettingsContainer/HBoxContainer/SoundSlider" to="." method="_on_sound_slider_value_changed"]
 [connection signal="pressed" from="SettingsContainer/BackButton" to="." method="_on_back_button_pressed"]

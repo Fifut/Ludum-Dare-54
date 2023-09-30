@@ -1,0 +1,40 @@
+[gd_scene load_steps=7 format=3 uid="uid://2ct3bhyhscyi"]
+
+[ext_resource type="Script" path="res://Game/game.gd" id="1_my4gs"]
+[ext_resource type="PackedScene" uid="uid://csaep2lwxt17k" path="res://Menu/hud.tscn" id="2_dmtve"]
+[ext_resource type="PackedScene" uid="uid://bcaev7h3sosy5" path="res://Earth/earth.tscn" id="2_sv2hj"]
+[ext_resource type="PackedScene" uid="uid://dnnuo03dxtwqj" path="res://Rocket/rocket.tscn" id="3_6kevj"]
+[ext_resource type="PackedScene" uid="uid://bdbixliu441p1" path="res://Orbit/orbit.tscn" id="4_fv3pj"]
+[ext_resource type="PackedScene" uid="uid://cfmpwidsrbs78" path="res://Satellite/satellite.tscn" id="5_qalrv"]
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_my4gs")
+
+[node name="HUDCanvasLayer" type="CanvasLayer" parent="."]
+unique_name_in_owner = true
+
+[node name="HUD" parent="HUDCanvasLayer" instance=ExtResource("2_dmtve")]
+
+[node name="Earth" parent="." instance=ExtResource("2_sv2hj")]
+unique_name_in_owner = true
+position = Vector2(700, 525)
+speed = 50
+
+[node name="Rocket" parent="." instance=ExtResource("3_6kevj")]
+position = Vector2(698, 406)
+
+[node name="Orbit" parent="." instance=ExtResource("4_fv3pj")]
+position = Vector2(700, 525)
+scale = Vector2(0.7, 0.7)
+
+[node name="Satellite1" parent="." instance=ExtResource("5_qalrv")]
+position = Vector2(700, 525)
+speed = -20
+
+[node name="Satellite2" parent="." instance=ExtResource("5_qalrv")]
+position = Vector2(700, 525)
+speed = 10
+sprite_rotation = 45
+orbit = Vector2(550, 0)
+
+[connection signal="on_rocket_at_orbit" from="Rocket" to="." method="_on_rocket_at_orbit"]

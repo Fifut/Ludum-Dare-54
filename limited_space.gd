@@ -2,21 +2,15 @@ extends Node2D
 
 
 @onready var MenuCanvasLayer = %MenuCanvasLayer
-@onready var Game = %Game
-@onready var HUDCanvasLayer = %HUDCanvasLayer
-
-
-func _ready():
-	Game.set_process(false)
-	Game.set_physics_process(false)
-	Game.hide()
-	HUDCanvasLayer.hide()
-	MenuCanvasLayer.show()
+@onready var LoopAudioStreamPlayer = %LoopAudioStreamPlayer
 
 
 func _on_menu_container_on_start():
-	Game.set_process(true)
-	Game.set_physics_process(true)
-	MenuCanvasLayer.hide()
-	HUDCanvasLayer.show()
-	Game.show()
+	MenuCanvasLayer.queue_free()
+	
+	var game = preload("res://Game/game.tscn").instantiate()
+	add_child(game)
+
+
+func _on_intro_audio_stream_player_finished():
+	LoopAudioStreamPlayer.play()

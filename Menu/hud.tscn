@@ -1,12 +1,41 @@
-[gd_scene load_steps=4 format=3 uid="uid://csaep2lwxt17k"]
+[gd_scene load_steps=6 format=3 uid="uid://csaep2lwxt17k"]
 
 [ext_resource type="Script" path="res://Menu/hud.gd" id="1_fkv8y"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lfeq3"]
 bg_color = Color(0, 0.333333, 0.0705882, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(1, 1, 1, 1)
+border_blend = true
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wcx2x"]
 bg_color = Color(0, 0.85098, 0.239216, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4fary"]
+bg_color = Color(0.458824, 0.129412, 0, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+border_blend = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h534o"]
+bg_color = Color(0.74902, 0.235294, 0, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(1, 1, 1, 1)
+border_blend = true
 
 [node name="HUD" type="Control"]
 layout_mode = 3
@@ -37,6 +66,18 @@ size_flags_horizontal = 8
 size_flags_vertical = 8
 theme_override_styles/background = SubResource("StyleBoxFlat_lfeq3")
 theme_override_styles/fill = SubResource("StyleBoxFlat_wcx2x")
+value = 50.0
+fill_mode = 3
+show_percentage = false
+
+[node name="FuelProgressBar" type="ProgressBar" parent="MarginContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(30, 150)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+theme_override_styles/background = SubResource("StyleBoxFlat_4fary")
+theme_override_styles/fill = SubResource("StyleBoxFlat_h534o")
 value = 50.0
 fill_mode = 3
 show_percentage = false
