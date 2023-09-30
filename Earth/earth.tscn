@@ -1,13 +1,13 @@
 [gd_scene load_steps=5 format=3 uid="uid://bcaev7h3sosy5"]
 
-[ext_resource type="Texture2D" uid="uid://3edo515k587s" path="res://icon.svg" id="1_8s56m"]
 [ext_resource type="Script" path="res://Earth/earth.gd" id="1_tc5ar"]
+[ext_resource type="Texture2D" uid="uid://c6vux6aeke3ym" path="res://Assets/Earth.png" id="2_kb0r4"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wpl32"]
-radius = 63.2851
+radius = 150.003
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mi61v"]
-radius = 171.0
+radius = 670.146
 
 [node name="Earth" type="StaticBody2D"]
 collision_mask = 2
@@ -15,10 +15,10 @@ script = ExtResource("1_tc5ar")
 
 [node name="EarthSprite" type="Sprite2D" parent="."]
 unique_name_in_owner = true
-texture = ExtResource("1_8s56m")
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_kb0r4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 shape = SubResource("CircleShape2D_wpl32")
 
 [node name="Area2D" type="Area2D" parent="."]

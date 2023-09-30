@@ -1,7 +1,7 @@
 extends StaticBody2D
 
 @export var speed = 50
-@export var altitude = 150
+@export var altitude = 400
 
 @onready var CollisionShape = %CollisionShape2D
 

@@ -7,11 +7,11 @@
 [node name="LimitedSpace" type="Node2D"]
 
 [node name="Satellite" parent="." instance=ExtResource("2_7j2bm")]
-position = Vector2(541, 325)
+position = Vector2(800, 450)
 speed = -20
 
 [node name="Earth" parent="." instance=ExtResource("1_b0o21")]
-position = Vector2(541, 325)
+position = Vector2(800, 450)
 
 [node name="Rocket" parent="." instance=ExtResource("3_42b04")]
-position = Vector2(541, 199)
+position = Vector2(801, 274)
