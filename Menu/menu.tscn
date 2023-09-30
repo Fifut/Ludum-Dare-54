@@ -1,10 +1,18 @@
-[gd_scene load_steps=9 format=3 uid="uid://0mp0xoprhcl7"]
+[gd_scene load_steps=11 format=3 uid="uid://0mp0xoprhcl7"]
 
 [ext_resource type="Script" path="res://Menu/menu.gd" id="1_e7hhq"]
 [ext_resource type="Texture2D" uid="uid://c6vux6aeke3ym" path="res://Assets/Earth.png" id="1_oykve"]
 [ext_resource type="FontFile" uid="uid://pnbn0lg56d7u" path="res://Assets/Font/Race Sport.ttf" id="2_f67qt"]
 [ext_resource type="Texture2D" uid="uid://dfe8vi375ld7f" path="res://Assets/Satellite.png" id="3_c7big"]
 [ext_resource type="FontFile" uid="uid://bn4x06gox4pfa" path="res://Assets/Font/hemi head bd it.otf" id="3_n63nk"]
+
+[sub_resource type="InputEventKey" id="InputEventKey_4xkku"]
+device = -1
+keycode = 32
+unicode = 32
+
+[sub_resource type="Shortcut" id="Shortcut_nj8ld"]
+events = [SubResource("InputEventKey_4xkku")]
 
 [sub_resource type="Animation" id="Animation_cpc3f"]
 resource_name = "Rotation"
@@ -127,6 +135,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 theme_override_fonts/font = ExtResource("3_n63nk")
 theme_override_font_sizes/font_size = 28
+shortcut = SubResource("Shortcut_nj8ld")
 text = "Start"
 flat = true
 
