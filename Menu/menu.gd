@@ -24,6 +24,7 @@ func _ready():
 	
 	HomeContainer.show()
 	HowToContainer.hide()
+	SettingsContainer.hide()
 	
 	master_bus = AudioServer.get_bus_index("Master")
 	SoundSlider.value = AudioServer.get_bus_volume_db(master_bus)
@@ -38,6 +39,8 @@ func _process(delta):
 
 
 func _on_start_button_pressed():
+	MenuAnimation.play("Rotation_start")
+	await MenuAnimation.animation_finished
 	on_start.emit()
 
 

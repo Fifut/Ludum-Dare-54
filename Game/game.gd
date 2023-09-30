@@ -1,11 +1,50 @@
 extends Node2D
 
 @onready var Earth = %Earth
+@onready var RocketMarker = %RocketMarker
+
+@onready var satellite_scene = preload("res://Satellite/satellite.tscn")
+@onready var rocket_scene = preload("res://Rocket/rocket.tscn")
+@onready var orbit_scene = preload("res://Orbit/orbit.tscn")
+
+var orbiting_satellite = 0
+var orbit = null
+
+
+func _ready():
+	_spawn_rocket()
+	_spawn_orbit()
+
+
+func _spawn_rocket():
+	var rocket = rocket_scene.instantiate()
+	rocket.on_rocket_at_orbit.connect(_on_rocket_at_orbit)
+	rocket.position = RocketMarker.position
+	rocket.name = "Rocket"
+	add_child(rocket)
+
+
+func _spawn_orbit():
+	orbit = orbit_scene.instantiate()
+	orbit.global_position = Earth.global_position
+	add_child(orbit)
+
+
+func _spawn_satellite(rocket_position):
+	var satellite = satellite_scene.instantiate()
+	satellite.orbit = rocket_position - Earth.global_position
+	satellite.global_position = Earth.global_position
+	add_child(satellite)
 
 
 func _on_rocket_at_orbit(rocket_position, rocket_rotation):
-	var satellite = preload("res://Satellite/satellite.tscn").instantiate()
-	satellite.orbit = rocket_position - Earth.global_position
-	satellite.global_position = Earth.global_position
+	orbit.remove()
+	_spawn_satellite(rocket_position)
+	await get_tree().create_timer(1.0).timeout
+	_spawn_rocket()
+	_spawn_orbit()
 	
-	add_child(satellite)
+	orbiting_satellite += 1
+	EVENT.on_rocket_at_orbit.emit(orbiting_satellite)
+
+

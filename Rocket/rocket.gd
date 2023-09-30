@@ -22,6 +22,9 @@ var engine = 0.0
 func _ready():
 	EVENT.on_engine_fuel_change.emit(Fuel)
 	
+	OrbitTimer.wait_time = randf_range(1.0, 3.0)
+#	OrbitTimer.wait_time = 0.1
+	
 	OrbitProgressBar.hide()
 	OrbitProgressBar.min_value = 0
 	OrbitProgressBar.max_value = OrbitTimer.wait_time

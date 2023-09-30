@@ -1,23 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://csaep2lwxt17k"]
+[gd_scene load_steps=7 format=3 uid="uid://csaep2lwxt17k"]
 
 [ext_resource type="Script" path="res://Menu/hud.gd" id="1_fkv8y"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lfeq3"]
-bg_color = Color(0, 0.333333, 0.0705882, 1)
-border_width_left = 4
-border_width_top = 4
-border_width_right = 4
-border_width_bottom = 4
-border_color = Color(1, 1, 1, 1)
-border_blend = true
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wcx2x"]
-bg_color = Color(0, 0.85098, 0.239216, 1)
-border_width_left = 4
-border_width_top = 4
-border_width_right = 4
-border_width_bottom = 4
-border_color = Color(1, 1, 1, 1)
+[ext_resource type="FontFile" uid="uid://bn4x06gox4pfa" path="res://Assets/Font/hemi head bd it.otf" id="2_3tpog"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4fary"]
 bg_color = Color(0.458824, 0.129412, 0, 1)
@@ -36,6 +20,23 @@ border_width_right = 4
 border_width_bottom = 4
 border_color = Color(1, 1, 1, 1)
 border_blend = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lfeq3"]
+bg_color = Color(0, 0.333333, 0.0705882, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(1, 1, 1, 1)
+border_blend = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wcx2x"]
+bg_color = Color(0, 0.85098, 0.239216, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(1, 1, 1, 1)
 
 [node name="HUD" type="Control"]
 layout_mode = 3
@@ -58,19 +59,22 @@ theme_override_constants/margin_top = 20
 theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 20
 
-[node name="EngineProgressBar" type="ProgressBar" parent="MarginContainer"]
+[node name="ScoreLabel" type="Label" parent="MarginContainer"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(30, 150)
 layout_mode = 2
-size_flags_horizontal = 8
-size_flags_vertical = 8
-theme_override_styles/background = SubResource("StyleBoxFlat_lfeq3")
-theme_override_styles/fill = SubResource("StyleBoxFlat_wcx2x")
-value = 50.0
-fill_mode = 3
-show_percentage = false
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("2_3tpog")
+theme_override_font_sizes/font_size = 28
+text = "Orbiting satellite : 0"
 
-[node name="FuelProgressBar" type="ProgressBar" parent="MarginContainer"]
+[node name="HBoxContainerLeft" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+theme_override_constants/separation = 20
+
+[node name="FuelProgressBar" type="ProgressBar" parent="MarginContainer/HBoxContainerLeft"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(30, 150)
 layout_mode = 2
@@ -78,6 +82,38 @@ size_flags_horizontal = 0
 size_flags_vertical = 8
 theme_override_styles/background = SubResource("StyleBoxFlat_4fary")
 theme_override_styles/fill = SubResource("StyleBoxFlat_h534o")
+value = 50.0
+fill_mode = 3
+show_percentage = false
+
+[node name="FuelLabel" type="Label" parent="MarginContainer/HBoxContainerLeft"]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_fonts/font = ExtResource("2_3tpog")
+theme_override_font_sizes/font_size = 28
+text = "Fuel"
+
+[node name="HBoxContainerRight" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+theme_override_constants/separation = 20
+
+[node name="EngineLabel" type="Label" parent="MarginContainer/HBoxContainerRight"]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_fonts/font = ExtResource("2_3tpog")
+theme_override_font_sizes/font_size = 28
+text = "Throttle"
+
+[node name="EngineProgressBar" type="ProgressBar" parent="MarginContainer/HBoxContainerRight"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(30, 150)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+theme_override_styles/background = SubResource("StyleBoxFlat_lfeq3")
+theme_override_styles/fill = SubResource("StyleBoxFlat_wcx2x")
 value = 50.0
 fill_mode = 3
 show_percentage = false

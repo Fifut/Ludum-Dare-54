@@ -68,7 +68,6 @@ stream = ExtResource("4_fw2rw")
 
 [node name="OrbitTimer" type="Timer" parent="."]
 unique_name_in_owner = true
-wait_time = 0.1
 
 [connection signal="area_entered" from="OrbitArea2D" to="." method="_on_orbit_area_entered"]
 [connection signal="area_exited" from="OrbitArea2D" to="." method="_on_orbit_area_exited"]
