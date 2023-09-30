@@ -8,13 +8,14 @@ radius = 7.0
 height = 96.0
 
 [node name="Satellite" type="StaticBody2D"]
+visible = false
 script = ExtResource("1_imqjb")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 unique_name_in_owner = true
-position = Vector2(200, 0)
 shape = SubResource("CapsuleShape2D_wnmwi")
 
 [node name="SatelliteSprite" type="Sprite2D" parent="CollisionShape2D"]
+unique_name_in_owner = true
 rotation = -1.5708
 texture = ExtResource("2_li5yg")

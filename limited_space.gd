@@ -14,7 +14,6 @@ func _ready():
 	MenuCanvasLayer.show()
 
 
-
 func _on_menu_container_on_start():
 	Game.set_process(true)
 	Game.set_physics_process(true)

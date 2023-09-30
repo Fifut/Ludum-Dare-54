@@ -21,8 +21,8 @@ EVENT="*res://Autoload/EVENTS.gd"
 
 [display]
 
-window/size/viewport_width=1600
-window/size/viewport_height=900
+window/size/viewport_width=1400
+window/size/viewport_height=1050
 
 [editor]
 
@@ -64,10 +64,7 @@ Deploy={
 
 2d_physics/layer_1="Earth"
 2d_physics/layer_2="Rocket"
-
-[physics]
-
-2d/default_gravity=0.0
+2d_physics/layer_3="Orbit"
 
 [rendering]
 

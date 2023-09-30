@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://bdbixliu441p1"]
+[gd_scene load_steps=6 format=3 uid="uid://bdbixliu441p1"]
 
 [ext_resource type="Texture2D" uid="uid://cy8ph1g5nmexq" path="res://Assets/Circle.png" id="1_lq148"]
+[ext_resource type="Script" path="res://Orbit/orbit.gd" id="1_ykx23"]
 
 [sub_resource type="Animation" id="Animation_jvdxf"]
 resource_name = "flash"
@@ -65,6 +66,7 @@ _data = {
 }
 
 [node name="Orbit" type="Node2D"]
+script = ExtResource("1_ykx23")
 
 [node name="CircleOutSprite" type="Sprite2D" parent="."]
 modulate = Color(1, 1, 1, 0.14902)
@@ -72,7 +74,6 @@ scale = Vector2(0.95, 0.95)
 texture = ExtResource("1_lq148")
 
 [node name="CircleInSprite" type="Sprite2D" parent="."]
-modulate = Color(1, 1, 1, 0.14902)
 scale = Vector2(1.05, 1.05)
 texture = ExtResource("1_lq148")
 
@@ -81,3 +82,20 @@ autoplay = "flash"
 libraries = {
 "": SubResource("AnimationLibrary_1q5cr")
 }
+
+[node name="OrbitArea" type="Area2D" parent="."]
+unique_name_in_owner = true
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="OrbitArea"]
+polygon = PackedVector2Array(0, -420, -78, -414, -146, -395, -228, -353, -297, -299, -348, -236, -388, -162, -413, -88, -421, 0, -413, 79, -393, 153, -357, 223, -304, 291, -239, 347, -165, 388, -81, 414, 0, 421, 82, 414, 162, 388, 248, 342, 310, 285, 358, 220, 394, 152, 414, 77, 420, 1, 413, -83, 388, -160, 351, -231, 302, -293, 240, -345, 164, -388, 84, -413, 0, -420, 0, -374, 74, -368, 148, -344, 211, -309, 269, -260, 312, -207, 346, -140, 369, -68, 374, 0, 367, 74, 347, 140, 318, 197, 275, 253, 217, 304, 143, 347, 73, 369, 0, 375, -74, 369, -150, 344, -215, 308, -271, 261, -318, 198, -350, 136, -368, 70, -376, 0, -369, -67, -346, -146, -305, -217, -265, -266, -203, -316, -130, -351, -68, -369, 0, -374)
+
+[node name="TimerArea" type="Timer" parent="."]
+unique_name_in_owner = true
+wait_time = 2.0
+one_shot = true
+
+[connection signal="area_entered" from="OrbitArea" to="." method="_on_orbit_area_area_entered"]
+[connection signal="area_exited" from="OrbitArea" to="." method="_on_orbit_area_area_exited"]
+[connection signal="timeout" from="TimerArea" to="." method="_on_timer_timeout"]

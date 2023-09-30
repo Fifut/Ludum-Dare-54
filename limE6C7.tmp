@@ -30,29 +30,21 @@ unique_name_in_owner = true
 unique_name_in_owner = true
 script = ExtResource("5_jdbjm")
 
+[node name="Satellite" parent="Game" instance=ExtResource("2_7j2bm")]
+position = Vector2(800, 450)
+speed = -20
+altitude = 450
+
 [node name="Earth" parent="Game" instance=ExtResource("1_b0o21")]
-unique_name_in_owner = true
-position = Vector2(700, 525)
+position = Vector2(800, 450)
 speed = 50
 
 [node name="Rocket" parent="Game" instance=ExtResource("3_42b04")]
-position = Vector2(698, 406)
+position = Vector2(799, 274)
 
 [node name="Orbit" parent="Game" instance=ExtResource("7_dvo0o")]
-position = Vector2(700, 525)
+position = Vector2(800, 450)
 scale = Vector2(0.7, 0.7)
-
-[node name="Satellite1" parent="Game" instance=ExtResource("2_7j2bm")]
-visible = true
-position = Vector2(700, 525)
-speed = -20
-
-[node name="Satellite2" parent="Game" instance=ExtResource("2_7j2bm")]
-visible = true
-position = Vector2(700, 525)
-speed = 10
-sprite_rotation = 45
-orbit = Vector2(550, 0)
 
 [connection signal="on_start" from="MenuCanvasLayer/MenuContainer" to="." method="_on_menu_container_on_start"]
 [connection signal="on_orbit_area_overlapping" from="Game/Orbit" to="Game" method="_on_orbit_area_overlapping"]

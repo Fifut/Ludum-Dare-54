@@ -10,8 +10,8 @@ noise_type = 4
 fractal_gain = 0.1
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_tf3gm"]
-width = 1600
-height = 900
+width = 1400
+height = 1050
 color_ramp = SubResource("Gradient_0xpvb")
 noise = SubResource("FastNoiseLite_lb7sa")
 
@@ -23,13 +23,13 @@ offset_bottom = 512.0
 texture = SubResource("NoiseTexture2D_tf3gm")
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]
-position = Vector2(800, 450)
+position = Vector2(700, 525)
 amount = 50
 lifetime = 60.0
 preprocess = 30.0
 texture = ExtResource("1_lklox")
 emission_shape = 3
-emission_rect_extents = Vector2(800, 450)
+emission_rect_extents = Vector2(700, 525)
 spread = 180.0
 gravity = Vector2(0, 0)
 initial_velocity_min = 0.5
