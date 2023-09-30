@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://bcaev7h3sosy5"]
+
+[ext_resource type="Texture2D" uid="uid://3edo515k587s" path="res://icon.svg" id="1_8s56m"]
+[ext_resource type="Script" path="res://Earth/earth.gd" id="1_tc5ar"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wpl32"]
+radius = 63.2851
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mi61v"]
+radius = 171.0
+
+[node name="Earth" type="StaticBody2D"]
+collision_mask = 2
+script = ExtResource("1_tc5ar")
+
+[node name="EarthSprite" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+texture = ExtResource("1_8s56m")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource("CircleShape2D_wpl32")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_mask = 2
+gravity_space_override = 1
+gravity_point = true
+gravity_point_unit_distance = 30.0
+gravity_point_center = Vector2(0, 0)
+gravity_direction = Vector2(0, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_mi61v")
