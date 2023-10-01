@@ -19,6 +19,7 @@ signal on_rocket_fail
 @onready var OrbitProgressBar : TextureProgressBar = %OrbitProgressBar
 @onready var RocketCPUParticles : CPUParticles2D = %RocketCPUParticles
 @onready var ExplodeAudioStreamPlayer : AudioStreamPlayer = %ExplodeAudioStreamPlayer
+@onready var OrbitArea2D : Area2D = %OrbitArea2D
 
 
 var engine = 0.0
@@ -72,6 +73,8 @@ func _integrate_forces(state):
 		elif Input.is_action_pressed("Engine-"):
 			engine -= Engine_Force
 		
+		elif  Input.is_action_just_pressed("EngineOff"):
+			engine = 0
 		
 		if Input.is_action_pressed("Left"):
 			angular_velocity -= RCS_Force
@@ -104,8 +107,13 @@ func _on_orbit_timer_timeout():
 
 
 func _on_collision_area_body_entered(body):
-	engine = 0
+	set_process(false)
+	FireAudioStreamPlayer.stop()
+	OrbitProgressBar.hide()
 	RocketSprite.hide()
+	OrbitArea2D.set_deferred("monitoring", false)
+	OrbitArea2D.set_deferred("monitorable", false)
+	
 	RocketCPUParticles.emitting = true
 	ExplodeAudioStreamPlayer.play()
 	await ExplodeAudioStreamPlayer.finished

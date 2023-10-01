@@ -1,11 +1,22 @@
-[gd_scene load_steps=13 format=3 uid="uid://0mp0xoprhcl7"]
+[gd_scene load_steps=24 format=3 uid="uid://0mp0xoprhcl7"]
 
 [ext_resource type="Script" path="res://Menu/menu.gd" id="1_e7hhq"]
+[ext_resource type="Theme" uid="uid://cq03fkiu0vv0x" path="res://Menu/menu_font.tres" id="1_lj2ug"]
 [ext_resource type="Texture2D" uid="uid://c6vux6aeke3ym" path="res://Assets/Earth.png" id="1_oykve"]
 [ext_resource type="FontFile" uid="uid://pnbn0lg56d7u" path="res://Assets/Font/Race Sport.ttf" id="2_f67qt"]
 [ext_resource type="Texture2D" uid="uid://dfe8vi375ld7f" path="res://Assets/Satellite.png" id="3_c7big"]
 [ext_resource type="Texture2D" uid="uid://bcjghwal8baqh" path="res://Assets/Rocket.png" id="3_csleq"]
 [ext_resource type="FontFile" uid="uid://bn4x06gox4pfa" path="res://Assets/Font/hemi head bd it.otf" id="3_n63nk"]
+[ext_resource type="Texture2D" uid="uid://begbyt4md7qf4" path="res://Assets/Gamepad/button_xbox_analog_trigger_light_1.png" id="7_srrtf"]
+[ext_resource type="Texture2D" uid="uid://mhb1n2vu0f33" path="res://Assets/Gamepad/button_xboxone_analog_l_direction_3.png" id="8_d0beb"]
+[ext_resource type="Texture2D" uid="uid://b5fqovec6btji" path="res://Assets/Gamepad/button_xboxone_analog_l_direction_1.png" id="9_1ivqk"]
+[ext_resource type="Texture2D" uid="uid://qaxh0w81kglp" path="res://Assets/Gamepad/button_xbox_analog_trigger_light_2.png" id="9_40t20"]
+[ext_resource type="Texture2D" uid="uid://b2ge71355nbea" path="res://Assets/Gamepad/button_xboxone_analog_r_direction_4.png" id="12_4p1nm"]
+[ext_resource type="Texture2D" uid="uid://bbmdionjirauv" path="res://Assets/Gamepad/button_xbox_digital_b_6.png" id="12_awal0"]
+[ext_resource type="Texture2D" uid="uid://df5en7fmq04n8" path="res://Assets/Gamepad/button_xbox_dpad_dark_4.png" id="13_axn3o"]
+[ext_resource type="Texture2D" uid="uid://cla6jsfy12hwr" path="res://Assets/Gamepad/button_xboxone_analog_r_direction_2.png" id="14_qotpg"]
+[ext_resource type="Texture2D" uid="uid://b2n8hlp70wrk7" path="res://Assets/Gamepad/button_xbox_dpad_dark_2.png" id="15_muogg"]
+[ext_resource type="Texture2D" uid="uid://ri25auvon0yv" path="res://Assets/Gamepad/button_xbox_digital_a_6.png" id="16_h52n1"]
 
 [sub_resource type="InputEventKey" id="InputEventKey_4xkku"]
 device = -1
@@ -158,6 +169,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_lj2ug")
 script = ExtResource("1_e7hhq")
 
 [node name="EarthSprite" type="Sprite2D" parent="."]
@@ -185,6 +197,7 @@ texture = ExtResource("3_c7big")
 
 [node name="HomeContainer" type="VBoxContainer" parent="."]
 unique_name_in_owner = true
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -197,8 +210,7 @@ alignment = 1
 
 [node name="TitleLabel" type="Label" parent="HomeContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("2_f67qt")
-theme_override_font_sizes/font_size = 40
+theme_override_font_sizes/font_size = 60
 text = "Limited Space in Space"
 horizontal_alignment = 1
 
@@ -258,12 +270,152 @@ horizontal_alignment = 1
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_n63nk")
 theme_override_font_sizes/font_size = 28
-text = "W A S D (or arows key) : throttle dans direction
-R to restar
-
-Try to reach orbit to deploy a sattelite
+text = "Reach orbit to deploy a sattelite
 Deploy as many satellites as possible"
 horizontal_alignment = 1
+
+[node name="GridContainer" type="GridContainer" parent="HowToContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/h_separation = 40
+theme_override_constants/v_separation = 20
+columns = 4
+
+[node name="WLabel" type="Label" parent="HowToContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "W"
+
+[node name="RTTextureRect" type="TextureRect" parent="HowToContainer/GridContainer"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+texture = ExtResource("9_40t20")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="LSUpTextureRect" type="TextureRect" parent="HowToContainer/GridContainer"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("9_1ivqk")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="HowToContainer/GridContainer"]
+layout_mode = 2
+text = "Throttle +"
+
+[node name="SLabel" type="Label" parent="HowToContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "S"
+
+[node name="LTTextureRect" type="TextureRect" parent="HowToContainer/GridContainer"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+texture = ExtResource("7_srrtf")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="LSDownTextureRect" type="TextureRect" parent="HowToContainer/GridContainer"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("8_d0beb")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="LTLabel" type="Label" parent="HowToContainer/GridContainer"]
+layout_mode = 2
+text = "Throttle -"
+
+[node name="ALabel" type="Label" parent="HowToContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "A
+"
+
+[node name="RSLeftTextureRect" type="TextureRect" parent="HowToContainer/GridContainer"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+texture = ExtResource("12_4p1nm")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="PADLeftTextureRect" type="TextureRect" parent="HowToContainer/GridContainer"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("13_axn3o")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="LabelLeft" type="Label" parent="HowToContainer/GridContainer"]
+layout_mode = 2
+text = "Left
+"
+
+[node name="DLabel" type="Label" parent="HowToContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "D"
+
+[node name="RSRightTextureRect" type="TextureRect" parent="HowToContainer/GridContainer"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+texture = ExtResource("14_qotpg")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="PADRightTextureRect" type="TextureRect" parent="HowToContainer/GridContainer"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("15_muogg")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="LabelRight" type="Label" parent="HowToContainer/GridContainer"]
+layout_mode = 2
+text = "Right"
+
+[node name="ALabel2" type="Label" parent="HowToContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Space"
+
+[node name="ATextureRect" type="TextureRect" parent="HowToContainer/GridContainer"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+texture = ExtResource("16_h52n1")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Empty2" type="Control" parent="HowToContainer/GridContainer"]
+layout_mode = 2
+
+[node name="Label3" type="Label" parent="HowToContainer/GridContainer"]
+layout_mode = 2
+text = "Throttle off"
+
+[node name="RLabel" type="Label" parent="HowToContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "R"
+
+[node name="BTextureRect" type="TextureRect" parent="HowToContainer/GridContainer"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+texture = ExtResource("12_awal0")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Empty" type="Control" parent="HowToContainer/GridContainer"]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="HowToContainer/GridContainer"]
+layout_mode = 2
+text = "Restart"
 
 [node name="BackButton" type="Button" parent="HowToContainer"]
 layout_mode = 2
@@ -275,6 +427,7 @@ flat = true
 
 [node name="SettingsContainer" type="VBoxContainer" parent="."]
 unique_name_in_owner = true
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
