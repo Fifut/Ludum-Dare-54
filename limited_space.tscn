@@ -1,9 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://di2aruf821lfb"]
+[gd_scene load_steps=6 format=3 uid="uid://di2aruf821lfb"]
 
 [ext_resource type="PackedScene" uid="uid://sgjddoeyaxwc" path="res://Background/background.tscn" id="1_de401"]
 [ext_resource type="Script" path="res://limited_space.gd" id="1_t1xvc"]
 [ext_resource type="PackedScene" uid="uid://0mp0xoprhcl7" path="res://Menu/menu.tscn" id="2_o7b4m"]
-[ext_resource type="Theme" uid="uid://dvwj3lop7am8f" path="res://Menu/main_theme.tres" id="3_xp08y"]
 [ext_resource type="AudioStream" uid="uid://b3wltyweru5cj" path="res://Assets/Sound/Music.wav" id="4_gbmsk"]
 [ext_resource type="AudioStream" uid="uid://cgvvj0n20va36" path="res://Assets/Sound/Music loop.wav" id="5_wyydf"]
 
@@ -14,7 +13,6 @@ script = ExtResource("1_t1xvc")
 unique_name_in_owner = true
 
 [node name="MenuContainer" parent="MenuCanvasLayer" instance=ExtResource("2_o7b4m")]
-theme = ExtResource("3_xp08y")
 
 [node name="Background" parent="." instance=ExtResource("1_de401")]
 
