@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Menu/end_game.gd" id="1_8iref"]
 [ext_resource type="FontFile" uid="uid://pnbn0lg56d7u" path="res://Assets/Font/Race Sport.ttf" id="1_mdfua"]
-[ext_resource type="FontFile" uid="uid://bn4x06gox4pfa" path="res://Assets/Font/hemi head bd it.otf" id="2_8jyg5"]
+[ext_resource type="Theme" uid="uid://dvwj3lop7am8f" path="res://Menu/main_theme.tres" id="1_t3ht1"]
 [ext_resource type="Texture2D" uid="uid://bbmdionjirauv" path="res://Assets/Gamepad/button_xbox_digital_b_6.png" id="4_xfy1a"]
 
 [node name="EndGame" type="Control"]
@@ -12,6 +12,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_t3ht1")
 script = ExtResource("1_8iref")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
@@ -46,8 +47,6 @@ horizontal_alignment = 1
 [node name="ScoreLabel" type="Label" parent="MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_fonts/font = ExtResource("2_8jyg5")
-theme_override_font_sizes/font_size = 28
 text = "Orbiting satellite : 0"
 horizontal_alignment = 1
 
@@ -58,7 +57,6 @@ alignment = 1
 
 [node name="RLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("2_8jyg5")
 theme_override_font_sizes/font_size = 28
 text = "R"
 horizontal_alignment = 1
@@ -72,7 +70,5 @@ stretch_mode = 4
 
 [node name="RestartLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("2_8jyg5")
-theme_override_font_sizes/font_size = 28
 text = "to restart"
 horizontal_alignment = 1

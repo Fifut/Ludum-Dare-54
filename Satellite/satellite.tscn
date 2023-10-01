@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://cfmpwidsrbs78"]
+[gd_scene load_steps=7 format=3 uid="uid://cfmpwidsrbs78"]
 
 [ext_resource type="Script" path="res://Satellite/satellite.gd" id="1_imqjb"]
 [ext_resource type="Texture2D" uid="uid://dfe8vi375ld7f" path="res://Assets/Satellite.png" id="2_li5yg"]
+[ext_resource type="AudioStream" uid="uid://bynk3nsqskceo" path="res://Assets/Sound/Satellite.wav" id="3_rq5ro"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wnmwi"]
 radius = 7.0
@@ -48,3 +49,8 @@ unique_name_in_owner = true
 libraries = {
 "": SubResource("AnimationLibrary_ngmpp")
 }
+
+[node name="DeployAudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_rq5ro")
+volume_db = -2.0
+autoplay = true

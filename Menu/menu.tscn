@@ -1,7 +1,7 @@
 [gd_scene load_steps=24 format=3 uid="uid://0mp0xoprhcl7"]
 
 [ext_resource type="Script" path="res://Menu/menu.gd" id="1_e7hhq"]
-[ext_resource type="Theme" uid="uid://cq03fkiu0vv0x" path="res://Menu/menu_font.tres" id="1_lj2ug"]
+[ext_resource type="Theme" uid="uid://dvwj3lop7am8f" path="res://Menu/main_theme.tres" id="1_k6ypr"]
 [ext_resource type="Texture2D" uid="uid://c6vux6aeke3ym" path="res://Assets/Earth.png" id="1_oykve"]
 [ext_resource type="FontFile" uid="uid://pnbn0lg56d7u" path="res://Assets/Font/Race Sport.ttf" id="2_f67qt"]
 [ext_resource type="Texture2D" uid="uid://dfe8vi375ld7f" path="res://Assets/Satellite.png" id="3_c7big"]
@@ -169,7 +169,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("1_lj2ug")
+theme = ExtResource("1_k6ypr")
 script = ExtResource("1_e7hhq")
 
 [node name="EarthSprite" type="Sprite2D" parent="."]
@@ -197,7 +197,6 @@ texture = ExtResource("3_c7big")
 
 [node name="HomeContainer" type="VBoxContainer" parent="."]
 unique_name_in_owner = true
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -210,8 +209,10 @@ alignment = 1
 
 [node name="TitleLabel" type="Label" parent="HomeContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_f67qt")
 theme_override_font_sizes/font_size = 60
-text = "Limited Space in Space"
+text = "Limited Space
+in Space"
 horizontal_alignment = 1
 
 [node name="StartButton" type="Button" parent="HomeContainer"]
@@ -249,6 +250,7 @@ flat = true
 
 [node name="HowToContainer" type="VBoxContainer" parent="."]
 unique_name_in_owner = true
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0

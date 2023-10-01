@@ -117,6 +117,7 @@ func _on_collision_area_body_entered(_body):
 	FireAudioStreamPlayer.stop()
 	OrbitProgressBar.hide()
 	RocketSprite.hide()
+	FireSprite.hide()
 	OrbitArea2D.set_deferred("monitoring", false)
 	OrbitArea2D.set_deferred("monitorable", false)
 	

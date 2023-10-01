@@ -1,0 +1,14 @@
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://dvwj3lop7am8f"]
+
+[ext_resource type="FontFile" uid="uid://bn4x06gox4pfa" path="res://Assets/Font/hemi head bd it.otf" id="1_bycvt"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lq6tb"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[resource]
+default_font = ExtResource("1_bycvt")
+default_font_size = 28
+Button/colors/font_color = Color(0.415686, 0.870588, 0.823529, 1)
+Button/colors/font_hover_color = Color(0, 0.301961, 0.94902, 1)
+Button/colors/font_hover_pressed_color = Color(0.0196078, 0.164706, 0.431373, 1)
+Button/styles/normal = SubResource("StyleBoxFlat_lq6tb")
