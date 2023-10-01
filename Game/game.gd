@@ -44,14 +44,13 @@ func _spawn_satellite(rocket_position):
 	add_child(satellite)
 
 
-func _on_rocket_at_orbit(rocket_position, rocket_rotation):
+func _on_rocket_at_orbit(_rocket_position, _rocket_rotation):
 	orbit.remove()
-	_spawn_satellite(rocket_position)
+	_spawn_satellite(_rocket_position)
 	await get_tree().create_timer(1.0).timeout
 	_spawn_rocket()
 	_spawn_orbit()
 	
 	orbiting_satellite += 1
 	EVENT.on_rocket_at_orbit.emit(orbiting_satellite)
-
 

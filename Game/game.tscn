@@ -57,3 +57,5 @@ shape = SubResource("SegmentShape2D_dqq7b")
 
 [node name="CollisionShape4" type="CollisionShape2D" parent="ExitArea"]
 shape = SubResource("SegmentShape2D_dotc1")
+
+[connection signal="restart" from="HUDCanvasLayer/EndGame" to="." method="_on_end_game_restart"]

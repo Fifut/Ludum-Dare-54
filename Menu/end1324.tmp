@@ -1,12 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://thq4t6x13aq2"]
+[gd_scene load_steps=7 format=3 uid="uid://thq4t6x13aq2"]
 
 [ext_resource type="Script" path="res://Menu/end_game.gd" id="1_8iref"]
 [ext_resource type="FontFile" uid="uid://pnbn0lg56d7u" path="res://Assets/Font/Race Sport.ttf" id="1_mdfua"]
 [ext_resource type="Theme" uid="uid://dvwj3lop7am8f" path="res://Menu/main_theme.tres" id="1_t3ht1"]
 [ext_resource type="Texture2D" uid="uid://bbmdionjirauv" path="res://Assets/Gamepad/button_xbox_digital_b_6.png" id="4_xfy1a"]
-[ext_resource type="Script" path="res://Menu/LeaderGridContainer.gd" id="5_1cpgp"]
 [ext_resource type="Script" path="res://WebSocket/client.gd" id="5_x7q2a"]
-[ext_resource type="Script" path="res://WebSocket/WebSocketClient.gd" id="6_i3ttu"]
+[ext_resource type="Script" path="res://websocket/websocket/WebSocketClient.gd" id="6_i3ttu"]
 
 [node name="EndGame" type="Control"]
 layout_mode = 3
@@ -128,7 +127,201 @@ size_flags_vertical = 4
 theme_override_constants/h_separation = 10
 theme_override_constants/v_separation = 10
 columns = 3
-script = ExtResource("5_1cpgp")
+
+[node name="Lead1" type="HBoxContainer" parent="MarginContainer/VBoxContainer/LeaderGridContainer"]
+layout_mode = 2
+
+[node name="Num" type="Label" parent="MarginContainer/VBoxContainer/LeaderGridContainer/Lead1"]
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+text = "01: "
+
+[node name="Name1" type="Label" parent="MarginContainer/VBoxContainer/LeaderGridContainer/Lead1"]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+text = "Player 1"
+
+[node name="Lead2" type="HBoxContainer" parent="MarginContainer/VBoxContainer/LeaderGridContainer"]
+layout_mode = 2
+
+[node name="Num" type="Label" parent="MarginContainer/VBoxContainer/LeaderGridContainer/Lead2"]
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+text = "02: "
+
+[node name="Name2" type="Label" parent="MarginContainer/VBoxContainer/LeaderGridContainer/Lead2"]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+text = "Player 1"
+
+[node name="Lead3" type="HBoxContainer" parent="MarginContainer/VBoxContainer/LeaderGridContainer"]
+layout_mode = 2
+
+[node name="Num" type="Label" parent="MarginContainer/VBoxContainer/LeaderGridContainer/Lead3"]
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+text = "03: "
+
+[node name="Name3" type="Label" parent="MarginContainer/VBoxContainer/LeaderGridContainer/Lead3"]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+text = "Player 1"
+
+[node name="Lead4" type="HBoxContainer" parent="MarginContainer/VBoxContainer/LeaderGridContainer"]
+layout_mode = 2
+
+[node name="Num" type="Label" parent="MarginContainer/VBoxContainer/LeaderGridContainer/Lead4"]
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+text = "04: "
+
+[node name="Name4" type="Label" parent="MarginContainer/VBoxContainer/LeaderGridContainer/Lead4"]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+text = "Player 1"
+
+[node name="Lead5" type="HBoxContainer" parent="MarginContainer/VBoxContainer/LeaderGridContainer"]
+layout_mode = 2
+
+[node name="Num" type="Label" parent="MarginContainer/VBoxContainer/LeaderGridContainer/Lead5"]
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+text = "05: "
+
+[node name="Name5" type="Label" parent="MarginContainer/VBoxContainer/LeaderGridContainer/Lead5"]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+text = "Player 1"
+
+[node name="Lead6" type="HBoxContainer" parent="MarginContainer/VBoxContainer/LeaderGridContainer"]
+layout_mode = 2
+
+[node name="Num" type="Label" parent="MarginContainer/VBoxContainer/LeaderGridContainer/Lead6"]
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+text = "06: "
+
+[node name="Name6" type="Label" parent="MarginContainer/VBoxContainer/LeaderGridContainer/Lead6"]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+text = "Player 1"
+
+[node name="Lead7" type="HBoxContainer" parent="MarginContainer/VBoxContainer/LeaderGridContainer"]
+layout_mode = 2
+
+[node name="Num" type="Label" parent="MarginContainer/VBoxContainer/LeaderGridContainer/Lead7"]
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+text = "07: "
+
+[node name="Name7" type="Label" parent="MarginContainer/VBoxContainer/LeaderGridContainer/Lead7"]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+text = "Player 1"
+
+[node name="Lead8" type="HBoxContainer" parent="MarginContainer/VBoxContainer/LeaderGridContainer"]
+layout_mode = 2
+
+[node name="Num" type="Label" parent="MarginContainer/VBoxContainer/LeaderGridContainer/Lead8"]
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+text = "08: "
+
+[node name="Name8" type="Label" parent="MarginContainer/VBoxContainer/LeaderGridContainer/Lead8"]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+text = "Player 1"
+
+[node name="Lead9" type="HBoxContainer" parent="MarginContainer/VBoxContainer/LeaderGridContainer"]
+layout_mode = 2
+
+[node name="Num" type="Label" parent="MarginContainer/VBoxContainer/LeaderGridContainer/Lead9"]
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+text = "09: "
+
+[node name="Name9" type="Label" parent="MarginContainer/VBoxContainer/LeaderGridContainer/Lead9"]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+text = "Player 1"
+
+[node name="Lead10" type="HBoxContainer" parent="MarginContainer/VBoxContainer/LeaderGridContainer"]
+layout_mode = 2
+
+[node name="Num" type="Label" parent="MarginContainer/VBoxContainer/LeaderGridContainer/Lead10"]
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+text = "10: "
+
+[node name="Name10" type="Label" parent="MarginContainer/VBoxContainer/LeaderGridContainer/Lead10"]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+text = "Player 1"
+
+[node name="Lead11" type="HBoxContainer" parent="MarginContainer/VBoxContainer/LeaderGridContainer"]
+layout_mode = 2
+
+[node name="Num" type="Label" parent="MarginContainer/VBoxContainer/LeaderGridContainer/Lead11"]
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+text = "11: "
+
+[node name="Name11" type="Label" parent="MarginContainer/VBoxContainer/LeaderGridContainer/Lead11"]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+text = "Player 1"
+
+[node name="Lead12" type="HBoxContainer" parent="MarginContainer/VBoxContainer/LeaderGridContainer"]
+layout_mode = 2
+
+[node name="Num" type="Label" parent="MarginContainer/VBoxContainer/LeaderGridContainer/Lead12"]
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+text = "12: "
+
+[node name="Name12" type="Label" parent="MarginContainer/VBoxContainer/LeaderGridContainer/Lead12"]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+text = "Player 1"
+
+[node name="Lead13" type="HBoxContainer" parent="MarginContainer/VBoxContainer/LeaderGridContainer"]
+layout_mode = 2
+
+[node name="Num" type="Label" parent="MarginContainer/VBoxContainer/LeaderGridContainer/Lead13"]
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+text = "13: "
+
+[node name="Name13" type="Label" parent="MarginContainer/VBoxContainer/LeaderGridContainer/Lead13"]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+text = "Player 1"
+
+[node name="Lead14" type="HBoxContainer" parent="MarginContainer/VBoxContainer/LeaderGridContainer"]
+layout_mode = 2
+
+[node name="Num" type="Label" parent="MarginContainer/VBoxContainer/LeaderGridContainer/Lead14"]
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+text = "14: "
+
+[node name="Name14" type="Label" parent="MarginContainer/VBoxContainer/LeaderGridContainer/Lead14"]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+text = "Player 1"
+
+[node name="Lead15" type="HBoxContainer" parent="MarginContainer/VBoxContainer/LeaderGridContainer"]
+layout_mode = 2
+
+[node name="Num" type="Label" parent="MarginContainer/VBoxContainer/LeaderGridContainer/Lead15"]
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+text = "15: "
+
+[node name="Name15" type="Label" parent="MarginContainer/VBoxContainer/LeaderGridContainer/Lead15"]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+text = "Player 1"
 
 [node name="WebSocket" type="Control" parent="."]
 unique_name_in_owner = true

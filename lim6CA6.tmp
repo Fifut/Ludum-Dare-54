@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=3 uid="uid://di2aruf821lfb"]
+
+[ext_resource type="PackedScene" uid="uid://sgjddoeyaxwc" path="res://Background/background.tscn" id="1_de401"]
+[ext_resource type="Script" path="res://limited_space.gd" id="1_t1xvc"]
+[ext_resource type="PackedScene" uid="uid://0mp0xoprhcl7" path="res://Menu/menu.tscn" id="2_o7b4m"]
+[ext_resource type="AudioStream" uid="uid://b3wltyweru5cj" path="res://Assets/Sound/Music.wav" id="4_gbmsk"]
+[ext_resource type="AudioStream" uid="uid://cgvvj0n20va36" path="res://Assets/Sound/Music loop.wav" id="5_wyydf"]
+
+[node name="LimitedSpace" type="Node2D"]
+script = ExtResource("1_t1xvc")
+
+[node name="MenuCanvasLayer" type="CanvasLayer" parent="."]
+unique_name_in_owner = true
+
+[node name="MenuContainer" parent="MenuCanvasLayer" instance=ExtResource("2_o7b4m")]
+
+[node name="Background" parent="." instance=ExtResource("1_de401")]
+
+[node name="IntroAudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_gbmsk")
+autoplay = true
+
+[node name="LoopAudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("5_wyydf")
+
+[connection signal="on_start" from="MenuCanvasLayer/MenuContainer" to="." method="_on_menu_container_on_start"]
+[connection signal="finished" from="IntroAudioStreamPlayer" to="." method="_on_intro_audio_stream_player_finished"]

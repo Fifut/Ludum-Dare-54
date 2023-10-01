@@ -38,7 +38,7 @@ func _ready():
 
 
 
-func _process(delta):
+func _process(_delta):
 	# Engine sound
 	if engine > 0 and not FireAudioStreamPlayer.playing:
 		FireAudioStreamPlayer.play()
