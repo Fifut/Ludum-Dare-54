@@ -24,5 +24,8 @@ autoplay = true
 unique_name_in_owner = true
 stream = ExtResource("5_wyydf")
 
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.345, 0.345)
+
 [connection signal="on_start" from="MenuCanvasLayer/MenuContainer" to="." method="_on_menu_container_on_start"]
 [connection signal="finished" from="IntroAudioStreamPlayer" to="." method="_on_intro_audio_stream_player_finished"]

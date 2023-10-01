@@ -1,9 +1,25 @@
-[gd_scene load_steps=5 format=3 uid="uid://2ct3bhyhscyi"]
+[gd_scene load_steps=9 format=3 uid="uid://2ct3bhyhscyi"]
 
 [ext_resource type="Script" path="res://Game/game.gd" id="1_my4gs"]
 [ext_resource type="PackedScene" uid="uid://csaep2lwxt17k" path="res://Menu/hud.tscn" id="2_dmtve"]
 [ext_resource type="PackedScene" uid="uid://bcaev7h3sosy5" path="res://Earth/earth.tscn" id="2_sv2hj"]
 [ext_resource type="PackedScene" uid="uid://thq4t6x13aq2" path="res://Menu/end_game.tscn" id="3_0lesb"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_mniq0"]
+a = Vector2(-200, -400)
+b = Vector2(-200, 1400)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_8fv2c"]
+a = Vector2(-200, 1400)
+b = Vector2(1600, 1400)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_dqq7b"]
+a = Vector2(1600, 1400)
+b = Vector2(1600, -400)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_dotc1"]
+a = Vector2(-200, -400)
+b = Vector2(1600, -400)
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_my4gs")
@@ -25,3 +41,19 @@ speed = 50
 [node name="RocketMarker" type="Marker2D" parent="."]
 unique_name_in_owner = true
 position = Vector2(698, 408)
+
+[node name="ExitArea" type="Area2D" parent="."]
+collision_layer = 16
+collision_mask = 2
+
+[node name="CollisionShape1" type="CollisionShape2D" parent="ExitArea"]
+shape = SubResource("SegmentShape2D_mniq0")
+
+[node name="CollisionShape2" type="CollisionShape2D" parent="ExitArea"]
+shape = SubResource("SegmentShape2D_8fv2c")
+
+[node name="CollisionShape3" type="CollisionShape2D" parent="ExitArea"]
+shape = SubResource("SegmentShape2D_dqq7b")
+
+[node name="CollisionShape4" type="CollisionShape2D" parent="ExitArea"]
+shape = SubResource("SegmentShape2D_dotc1")

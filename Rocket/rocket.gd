@@ -18,6 +18,7 @@ signal on_rocket_fail
 @onready var OrbitTimer : Timer = %OrbitTimer
 @onready var OrbitProgressBar : TextureProgressBar = %OrbitProgressBar
 @onready var RocketCPUParticles : CPUParticles2D = %RocketCPUParticles
+@onready var SmokeParticles : CPUParticles2D = %SmokeParticles
 @onready var ExplodeAudioStreamPlayer : AudioStreamPlayer = %ExplodeAudioStreamPlayer
 @onready var OrbitArea2D : Area2D = %OrbitArea2D
 
@@ -56,8 +57,12 @@ func _process(delta):
 	# Fire sprite
 	if engine > 0:
 		FireSprite.show()
+		SmokeParticles.emitting = true
+		SmokeParticles.initial_velocity_min = engine
+		SmokeParticles.initial_velocity_max = engine
 	else:
 		FireSprite.hide()
+		SmokeParticles.emitting = false
 	
 	#Fuel
 	if engine > 0:
@@ -106,8 +111,9 @@ func _on_orbit_timer_timeout():
 	queue_free()
 
 
-func _on_collision_area_body_entered(body):
+func _on_collision_area_body_entered(_body):
 	set_process(false)
+	SmokeParticles.emitting = false
 	FireAudioStreamPlayer.stop()
 	OrbitProgressBar.hide()
 	RocketSprite.hide()
