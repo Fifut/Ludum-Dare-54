@@ -2,18 +2,23 @@ extends RigidBody2D
 
 
 signal on_rocket_at_orbit
+signal on_rocket_fail
 
 
 @export var RCS_Force = 0.1
 @export var Engine_Force = 1
 @export var Fuel = 100
 
+@onready var RocketSprite = %RocketSprite
+@onready var RocketCollisionShape2D = %RocketCollisionShape2D
 @onready var EngineMarker = %EngineMarker
 @onready var RCSMarker = %RCSMarker
 @onready var FireSprite = %FireSprite
 @onready var FireAudioStreamPlayer = %FireAudioStreamPlayer
 @onready var OrbitTimer : Timer = %OrbitTimer
 @onready var OrbitProgressBar : TextureProgressBar = %OrbitProgressBar
+@onready var RocketCPUParticles : CPUParticles2D = %RocketCPUParticles
+@onready var ExplodeAudioStreamPlayer : AudioStreamPlayer = %ExplodeAudioStreamPlayer
 
 
 var engine = 0.0
@@ -96,3 +101,14 @@ func _on_orbit_area_exited(_area):
 func _on_orbit_timer_timeout():
 	on_rocket_at_orbit.emit(self.global_position, self.global_rotation_degrees)
 	queue_free()
+
+
+func _on_collision_area_body_entered(body):
+	engine = 0
+	RocketSprite.hide()
+	RocketCPUParticles.emitting = true
+	ExplodeAudioStreamPlayer.play()
+	await ExplodeAudioStreamPlayer.finished
+	on_rocket_fail.emit()
+	queue_free()
+	

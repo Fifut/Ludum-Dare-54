@@ -2,6 +2,7 @@ extends Node2D
 
 @onready var Earth = %Earth
 @onready var RocketMarker = %RocketMarker
+@onready var EndGame = %EndGame
 
 @onready var satellite_scene = preload("res://Satellite/satellite.tscn")
 @onready var rocket_scene = preload("res://Rocket/rocket.tscn")
@@ -12,6 +13,7 @@ var orbit = null
 
 
 func _ready():
+	EndGame.hide()
 	_spawn_rocket()
 	_spawn_orbit()
 
@@ -19,6 +21,11 @@ func _ready():
 func _spawn_rocket():
 	var rocket = rocket_scene.instantiate()
 	rocket.on_rocket_at_orbit.connect(_on_rocket_at_orbit)
+	rocket.on_rocket_fail.connect(
+		func():
+			EndGame.orbiting_satellite = orbiting_satellite
+			EndGame.show()
+	)
 	rocket.position = RocketMarker.position
 	rocket.name = "Rocket"
 	add_child(rocket)

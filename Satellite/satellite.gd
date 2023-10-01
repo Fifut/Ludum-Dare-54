@@ -14,7 +14,10 @@ func _ready():
 	SatelliteSprite.self_modulate = Color(randf_range(0.5, 1.0), randf_range(0.5, 1.0), randf_range(0.5, 1.0))
 	CollisionShape.position = orbit
 	CollisionShape.rotation_degrees = sprite_rotation
-	speed = randi_range(-50, 50)
+	
+	speed = randi_range(-45, 45)
+	if  -5 < speed and speed < 5:
+		speed = 5
 	
 	SatelliteAnimationPlayer.play("fadein")
 

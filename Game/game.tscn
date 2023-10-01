@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Game/game.gd" id="1_my4gs"]
 [ext_resource type="PackedScene" uid="uid://csaep2lwxt17k" path="res://Menu/hud.tscn" id="2_dmtve"]
 [ext_resource type="PackedScene" uid="uid://bcaev7h3sosy5" path="res://Earth/earth.tscn" id="2_sv2hj"]
-[ext_resource type="PackedScene" uid="uid://cfmpwidsrbs78" path="res://Satellite/satellite.tscn" id="5_qalrv"]
+[ext_resource type="PackedScene" uid="uid://thq4t6x13aq2" path="res://Menu/end_game.tscn" id="3_0lesb"]
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_my4gs")
@@ -13,6 +13,10 @@ unique_name_in_owner = true
 
 [node name="HUD" parent="HUDCanvasLayer" instance=ExtResource("2_dmtve")]
 
+[node name="EndGame" parent="HUDCanvasLayer" instance=ExtResource("3_0lesb")]
+unique_name_in_owner = true
+visible = false
+
 [node name="Earth" parent="." instance=ExtResource("2_sv2hj")]
 unique_name_in_owner = true
 position = Vector2(700, 525)
@@ -21,11 +25,3 @@ speed = 50
 [node name="RocketMarker" type="Marker2D" parent="."]
 unique_name_in_owner = true
 position = Vector2(698, 408)
-
-[node name="Satellite1" parent="." instance=ExtResource("5_qalrv")]
-position = Vector2(700, 525)
-
-[node name="Satellite2" parent="." instance=ExtResource("5_qalrv")]
-position = Vector2(700, 525)
-sprite_rotation = 45
-orbit = Vector2(550, 0)

@@ -1,0 +1,58 @@
+[gd_scene load_steps=4 format=3 uid="uid://thq4t6x13aq2"]
+
+[ext_resource type="Script" path="res://Menu/end_game.gd" id="1_8iref"]
+[ext_resource type="FontFile" uid="uid://pnbn0lg56d7u" path="res://Assets/Font/Race Sport.ttf" id="1_mdfua"]
+[ext_resource type="FontFile" uid="uid://bn4x06gox4pfa" path="res://Assets/Font/hemi head bd it.otf" id="2_8jyg5"]
+
+[node name="EndGame" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8iref")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_top = 100
+theme_override_constants/margin_right = 100
+theme_override_constants/margin_bottom = 100
+
+[node name="ColorRect" type="ColorRect" parent="MarginContainer"]
+layout_mode = 2
+color = Color(0, 0, 0, 0.745098)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 50
+
+[node name="TitleLabel" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_fonts/font = ExtResource("1_mdfua")
+theme_override_font_sizes/font_size = 60
+text = "Game over"
+horizontal_alignment = 1
+
+[node name="ScoreLabel" type="Label" parent="MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_8jyg5")
+theme_override_font_sizes/font_size = 28
+text = "Orbiting satellite : 0"
+horizontal_alignment = 1
+
+[node name="RestartLabel" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_8jyg5")
+theme_override_font_sizes/font_size = 28
+text = "R to restart"
+horizontal_alignment = 1
