@@ -72,14 +72,8 @@ func _process(delta):
 
 
 func _integrate_forces(state):
-		if Input.is_action_pressed("Engine+"):
-			engine += Engine_Force
-			
-		elif Input.is_action_pressed("Engine-"):
-			engine -= Engine_Force
-		
-		elif  Input.is_action_just_pressed("EngineOff"):
-			engine = 0
+
+		engine = Input.get_action_strength("Engine+") * 100
 		
 		if Input.is_action_pressed("Left"):
 			angular_velocity -= RCS_Force

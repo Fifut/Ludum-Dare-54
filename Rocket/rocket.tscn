@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://Rocket/rocket.gd" id="1_tepyd"]
 [ext_resource type="Texture2D" uid="uid://bli2gapwmjonf" path="res://Assets/Progress.png" id="2_1dqny"]
-[ext_resource type="Texture2D" uid="uid://bcjghwal8baqh" path="res://Assets/Rocket.png" id="2_22k41"]
 [ext_resource type="Texture2D" uid="uid://etrw6yq0kutg" path="res://Assets/Fire.png" id="3_hgt3j"]
+[ext_resource type="Texture2D" uid="uid://cgr810ws0n1ta" path="res://Assets/Rocket small.png" id="3_homtu"]
 [ext_resource type="AudioStream" uid="uid://jndw3ampcf3s" path="res://Assets/Sound/Fire.wav" id="4_fw2rw"]
 [ext_resource type="AudioStream" uid="uid://cdwp5bjkruh5x" path="res://Assets/Sound/Boom.wav" id="6_ldsux"]
 [ext_resource type="Texture2D" uid="uid://dr65373fqaswb" path="res://Assets/Smoke.png" id="7_ahqw3"]
@@ -45,8 +45,8 @@ tint_progress = Color(0.0627451, 0.882353, 0.0509804, 1)
 
 [node name="RocketSprite" type="Sprite2D" parent="."]
 unique_name_in_owner = true
-scale = Vector2(0.25, 0.25)
-texture = ExtResource("2_22k41")
+texture_filter = 1
+texture = ExtResource("3_homtu")
 
 [node name="RocketCollisionShape2D" type="CollisionShape2D" parent="."]
 unique_name_in_owner = true
