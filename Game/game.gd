@@ -4,6 +4,7 @@ extends Node2D
 @onready var RocketMarker = %RocketMarker
 @onready var EndGame = %EndGame
 
+@onready var rocket_sprite = %RocketSprite
 @onready var satellite_scene = preload("res://Satellite/satellite.tscn")
 @onready var rocket_scene = preload("res://Rocket/rocket.tscn")
 @onready var orbit_scene = preload("res://Orbit/orbit.tscn")
@@ -16,6 +17,12 @@ func _ready():
 	EndGame.hide()
 	_spawn_rocket()
 	_spawn_orbit()
+
+
+func _process(delta):
+	var rocket = get_node_or_null("Rocket")
+	if rocket:
+		rocket_sprite.rotation = rocket.rotation
 
 
 func _spawn_rocket():

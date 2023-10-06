@@ -1,9 +1,13 @@
-[gd_scene load_steps=9 format=3 uid="uid://2ct3bhyhscyi"]
+[gd_scene load_steps=11 format=3 uid="uid://2ct3bhyhscyi"]
 
 [ext_resource type="Script" path="res://Game/game.gd" id="1_my4gs"]
 [ext_resource type="PackedScene" uid="uid://csaep2lwxt17k" path="res://Menu/hud.tscn" id="2_dmtve"]
 [ext_resource type="PackedScene" uid="uid://bcaev7h3sosy5" path="res://Earth/earth.tscn" id="2_sv2hj"]
 [ext_resource type="PackedScene" uid="uid://thq4t6x13aq2" path="res://Menu/end_game.tscn" id="3_0lesb"]
+[ext_resource type="Texture2D" uid="uid://cgr810ws0n1ta" path="res://Assets/Rocket small.png" id="5_mlamg"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_doh4h"]
+viewport_path = NodePath("SubViewport")
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_mniq0"]
 a = Vector2(-100, -100)
@@ -23,6 +27,14 @@ b = Vector2(1100, -100)
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_my4gs")
+
+[node name="MainCamera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(197, 157)
+texture = SubResource("ViewportTexture_doh4h")
+centered = false
 
 [node name="HUDCanvasLayer" type="CanvasLayer" parent="."]
 unique_name_in_owner = true
@@ -58,3 +70,13 @@ shape = SubResource("SegmentShape2D_dqq7b")
 [node name="CollisionShape4" type="CollisionShape2D" parent="ExitArea"]
 position = Vector2(-3, 0)
 shape = SubResource("SegmentShape2D_dotc1")
+
+[node name="SubViewport" type="SubViewport" parent="."]
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(100, 100)
+
+[node name="RocketSprite" type="Sprite2D" parent="SubViewport"]
+unique_name_in_owner = true
+position = Vector2(50, 50)
+texture = ExtResource("5_mlamg")
