@@ -7,7 +7,7 @@ extends Node2D
 func _ready():
 	hide()
 	
-	var orbit_altitude = randf_range(0.5, 1.2)
+	var orbit_altitude = randf_range(0.7, 1.1)
 	scale = Vector2(orbit_altitude, orbit_altitude)
 	
 	OrbitAnimationPlayer.play("fadein")

@@ -21,8 +21,8 @@ EVENT="*res://Autoload/EVENTS.gd"
 
 [display]
 
-window/size/viewport_width=1400
-window/size/viewport_height=1050
+window/size/viewport_width=1000
+window/size/viewport_height=1000
 
 [editor]
 

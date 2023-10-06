@@ -33,7 +33,7 @@ func _ready():
 func _process(delta):
 	SatelliteNode.rotation_degrees += delta * 5
 	if SatelliteNode.rotation_degrees > 30:
-		SatelliteNode.rotation_degrees = -25
+		SatelliteNode.rotation_degrees = -35
 		SatelliteSprite.rotation_degrees = randi_range(0, 360)
 		SatelliteSprite.self_modulate = Color(randf_range(0.5, 1.0), randf_range(0.5, 1.0), randf_range(0.5, 1.0))
 

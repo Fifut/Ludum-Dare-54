@@ -2,11 +2,11 @@
 
 [ext_resource type="Script" path="res://Menu/menu.gd" id="1_e7hhq"]
 [ext_resource type="Theme" uid="uid://dvwj3lop7am8f" path="res://Menu/main_theme.tres" id="1_k6ypr"]
-[ext_resource type="Texture2D" uid="uid://c6vux6aeke3ym" path="res://Assets/Earth.png" id="1_oykve"]
 [ext_resource type="FontFile" uid="uid://pnbn0lg56d7u" path="res://Assets/Font/Race Sport.ttf" id="2_f67qt"]
 [ext_resource type="Texture2D" uid="uid://dfe8vi375ld7f" path="res://Assets/Satellite.png" id="3_c7big"]
 [ext_resource type="Texture2D" uid="uid://bcjghwal8baqh" path="res://Assets/Rocket.png" id="3_csleq"]
 [ext_resource type="FontFile" uid="uid://bn4x06gox4pfa" path="res://Assets/Font/hemi head bd it.otf" id="3_n63nk"]
+[ext_resource type="Texture2D" uid="uid://b8o2v8ridrupl" path="res://Assets/Earth big.png" id="3_pj8xg"]
 [ext_resource type="Texture2D" uid="uid://begbyt4md7qf4" path="res://Assets/Gamepad/button_xbox_analog_trigger_light_1.png" id="7_srrtf"]
 [ext_resource type="Texture2D" uid="uid://mhb1n2vu0f33" path="res://Assets/Gamepad/button_xboxone_analog_l_direction_3.png" id="8_d0beb"]
 [ext_resource type="Texture2D" uid="uid://b5fqovec6btji" path="res://Assets/Gamepad/button_xboxone_analog_l_direction_1.png" id="9_1ivqk"]
@@ -53,7 +53,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [1.309, 0.0]
+"values": [1.5708, 0.0]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -65,7 +65,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [0.0, -1.309]
+"values": [0.0, -1.5708]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -77,7 +77,7 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [0.0, -1.309]
+"values": [0.0, -1.5708]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -89,7 +89,7 @@ tracks/3/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [1.309, 0.0]
+"values": [1.5708, 0.0]
 }
 
 [sub_resource type="Animation" id="Animation_puys1"]
@@ -104,7 +104,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [0.0, 1.309]
+"values": [0.0, 1.5708]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -116,7 +116,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [0.0, 1.309]
+"values": [0.0, 1.5708]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -174,9 +174,9 @@ script = ExtResource("1_e7hhq")
 
 [node name="EarthSprite" type="Sprite2D" parent="."]
 unique_name_in_owner = true
-position = Vector2(-300, 525)
+position = Vector2(-400, 500)
 scale = Vector2(2, 2)
-texture = ExtResource("1_oykve")
+texture = ExtResource("3_pj8xg")
 
 [node name="RocketSprite" type="Sprite2D" parent="EarthSprite"]
 position = Vector2(321, 147)
@@ -186,12 +186,12 @@ texture = ExtResource("3_csleq")
 
 [node name="SatelliteNode" type="Node2D" parent="."]
 unique_name_in_owner = true
-position = Vector2(-300, 525)
+position = Vector2(-400, 500)
 rotation = -0.349066
 
 [node name="SatelliteSprite" type="Sprite2D" parent="SatelliteNode"]
 unique_name_in_owner = true
-position = Vector2(1500, 0)
+position = Vector2(1200, 0)
 rotation = 0.663225
 texture = ExtResource("3_c7big")
 
@@ -257,6 +257,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+rotation = 1.5708
 pivot_offset = Vector2(-300, 525)
 theme_override_constants/separation = 30
 alignment = 1
