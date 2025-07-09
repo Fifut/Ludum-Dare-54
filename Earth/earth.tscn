@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://bcaev7h3sosy5"]
 
-[ext_resource type="Script" path="res://Earth/earth.gd" id="1_tc5ar"]
+[ext_resource type="Script" uid="uid://broiyynsjr1e2" path="res://Earth/earth.gd" id="1_tc5ar"]
 [ext_resource type="Texture2D" uid="uid://c6vux6aeke3ym" path="res://Assets/Earth.png" id="2_kb0r4"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wpl32"]

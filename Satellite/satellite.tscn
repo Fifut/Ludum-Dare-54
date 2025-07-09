@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://cfmpwidsrbs78"]
 
-[ext_resource type="Script" path="res://Satellite/satellite.gd" id="1_imqjb"]
+[ext_resource type="Script" uid="uid://ddi6foko50uge" path="res://Satellite/satellite.gd" id="1_imqjb"]
 [ext_resource type="Texture2D" uid="uid://dfe8vi375ld7f" path="res://Assets/Satellite.png" id="2_li5yg"]
 [ext_resource type="AudioStream" uid="uid://bynk3nsqskceo" path="res://Assets/Sound/Satellite.wav" id="3_rq5ro"]
 
@@ -26,7 +26,7 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ngmpp"]
 _data = {
-"fadein": SubResource("Animation_lhkno")
+&"fadein": SubResource("Animation_lhkno")
 }
 
 [node name="Satellite" type="StaticBody2D"]
@@ -47,7 +47,7 @@ texture = ExtResource("2_li5yg")
 [node name="SatelliteAnimationPlayer" type="AnimationPlayer" parent="."]
 unique_name_in_owner = true
 libraries = {
-"": SubResource("AnimationLibrary_ngmpp")
+&"": SubResource("AnimationLibrary_ngmpp")
 }
 
 [node name="DeployAudioStreamPlayer" type="AudioStreamPlayer" parent="."]

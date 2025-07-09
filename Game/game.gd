@@ -3,11 +3,13 @@ extends Node2D
 @onready var Earth = %Earth
 @onready var RocketMarker = %RocketMarker
 @onready var EndGame = %EndGame
-
 @onready var rocket_sprite = %RocketSprite
+@onready var asteroid_marker = %AsteroidMarker
+
 @onready var satellite_scene = preload("res://Satellite/satellite.tscn")
 @onready var rocket_scene = preload("res://Rocket/rocket.tscn")
 @onready var orbit_scene = preload("res://Orbit/orbit.tscn")
+@onready var asteroid_scene = preload("res://Asteroid/asteroid.tscn")
 
 var orbiting_satellite = 0
 var orbit = null
@@ -17,6 +19,7 @@ func _ready():
 	EndGame.hide()
 	_spawn_rocket()
 	_spawn_orbit()
+	_spawn_asteroid()
 
 
 func _process(delta):
@@ -51,6 +54,12 @@ func _spawn_satellite(rocket_position):
 	add_child(satellite)
 
 
+func _spawn_asteroid():
+	var asteroid : StaticBody2D = asteroid_scene.instantiate()
+	asteroid.global_position = $AsteroidMarker/AsteroidMarker1.global_position
+	add_child(asteroid)
+
+
 func _on_rocket_at_orbit(rocket_position, rocket_rotation):
 	orbit.remove()
 	_spawn_satellite(rocket_position)
@@ -60,5 +69,3 @@ func _on_rocket_at_orbit(rocket_position, rocket_rotation):
 	
 	orbiting_satellite += 1
 	EVENT.on_rocket_at_orbit.emit(orbiting_satellite)
-
-

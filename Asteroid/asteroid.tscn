@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://dobdlo4nc4nm1"]
+
+[ext_resource type="Script" uid="uid://gxmtnkm5c2y6" path="res://Asteroid/asteroid.gd" id="1_aasax"]
+[ext_resource type="Texture2D" uid="uid://y5lfg414xi37" path="res://Assets/Asteroid.png" id="1_mybwc"]
+
+[node name="Asteroid" type="StaticBody2D"]
+collision_layer = 8
+collision_mask = 2
+script = ExtResource("1_aasax")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_mybwc")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-10, -25, -3, -30, 2, -35, 8, -38, 14, -38, 20, -34, 24, -23, 27, -14, 32, -6, 39, 0, 42, 4, 43, 11, 43, 26, 42, 37, 39, 42, 36, 42, 28, 34, 18, 27, 8, 29, -4, 33, -12, 35, -22, 33, -32, 30, -38, 25, -40, 16, -41, -2, -36, -14, -31, -21, -27, -24, -16, -24)

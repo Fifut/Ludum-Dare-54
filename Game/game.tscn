@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://2ct3bhyhscyi"]
 
-[ext_resource type="Script" path="res://Game/game.gd" id="1_my4gs"]
+[ext_resource type="Script" uid="uid://bsh0wlxwj2bxc" path="res://Game/game.gd" id="1_my4gs"]
 [ext_resource type="PackedScene" uid="uid://csaep2lwxt17k" path="res://Menu/hud.tscn" id="2_dmtve"]
 [ext_resource type="PackedScene" uid="uid://bcaev7h3sosy5" path="res://Earth/earth.tscn" id="2_sv2hj"]
 [ext_resource type="PackedScene" uid="uid://thq4t6x13aq2" path="res://Menu/end_game.tscn" id="3_0lesb"]
@@ -78,5 +78,21 @@ size = Vector2i(100, 100)
 
 [node name="RocketSprite" type="Sprite2D" parent="SubViewport"]
 unique_name_in_owner = true
+visible = false
 position = Vector2(50, 50)
 texture = ExtResource("5_mlamg")
+
+[node name="AsteroidMarker" type="Node2D" parent="."]
+unique_name_in_owner = true
+
+[node name="AsteroidMarker1" type="Marker2D" parent="AsteroidMarker"]
+position = Vector2(500, -100)
+
+[node name="AsteroidMarker2" type="Marker2D" parent="AsteroidMarker"]
+position = Vector2(-100, 500)
+
+[node name="AsteroidMarker3" type="Marker2D" parent="AsteroidMarker"]
+position = Vector2(500, 1100)
+
+[node name="AsteroidMarker4" type="Marker2D" parent="AsteroidMarker"]
+position = Vector2(1100, 500)

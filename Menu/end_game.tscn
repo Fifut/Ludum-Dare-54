@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://thq4t6x13aq2"]
 
-[ext_resource type="Script" path="res://Menu/end_game.gd" id="1_8iref"]
+[ext_resource type="Script" uid="uid://dkv18g27687sm" path="res://Menu/end_game.gd" id="1_8iref"]
 [ext_resource type="FontFile" uid="uid://pnbn0lg56d7u" path="res://Assets/Font/Race Sport.ttf" id="1_mdfua"]
 [ext_resource type="Theme" uid="uid://dvwj3lop7am8f" path="res://Menu/main_theme.tres" id="1_t3ht1"]
 [ext_resource type="Texture2D" uid="uid://bbmdionjirauv" path="res://Assets/Gamepad/button_xbox_digital_b_6.png" id="4_xfy1a"]
